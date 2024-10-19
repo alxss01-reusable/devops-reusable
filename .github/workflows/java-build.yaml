@@ -21,7 +21,7 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: ${{ format('RUNNER_{0}', vars.ENVIRONMENT ) }}
         env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
