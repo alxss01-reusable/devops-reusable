@@ -13,6 +13,10 @@ on:
                 description: 'Executar ou não snyk'
                 required: true
                 type: string
+            organization:
+                description: 'Organization Sonar Cloud Scan'
+                required: true
+                type: string
 
 jobs:
     build:
@@ -26,6 +30,6 @@ jobs:
               uses: alxss01-actions/sonar-cloud@main
               with:
                 projectKey: 'br.com.devsenior:ds-devops'
-                organization: ${{ vars.SONAR_CLOUD_ORGANIZATION }}
+                organization: ${{ inputs.organization }}
                 token: ${{ secrets.SONAR_CLOUD_TOKEN }}
                 
