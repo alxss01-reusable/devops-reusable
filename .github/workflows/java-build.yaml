@@ -1,0 +1,24 @@
+on:
+    workflow_call:
+        inputs:
+            sonar-cloud-enabled:
+                description: 'Executar ou não sonar scanner'
+                required: true
+                type: string
+            owasp-zap-enabled:
+                description: 'Executar ou não dependency check'
+                required: true
+                type: string
+            snyk-enabled:
+                description: 'Executar ou não snyk'
+                required: true
+                type: string
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Intial
+              run: |
+                echo "Hello, Alex!"
