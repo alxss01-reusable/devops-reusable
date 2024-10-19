@@ -21,7 +21,7 @@ on:
 
 jobs:
     build:
-        runs-on: ${{ format('RUNNER_{0}', vars.ENVIRONMENT ) }}
+        runs-on: ${{ vars.RUNNER_DEV }}
         env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
