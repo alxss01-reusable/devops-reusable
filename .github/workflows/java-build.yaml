@@ -31,5 +31,5 @@ jobs:
               with:
                 projectKey: 'br.com.devsenior:ds-devops'
                 organization: ${{ inputs.organization }}
-                token: ${{ secrets.SONAR_CLOUD_TOKEN }}
+                token: ${{ secrets.SONAR_TOKEN }}
                 
