@@ -19,6 +19,13 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Intial
-              run: |
-                echo "Hello, Alex!"
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: Sonar Cloud Scan
+              uses: alxss01-actions/sonar-cloud@main
+              with:
+                projectKey: 'br.com.devsenior:ds-devops'
+                organization: ${{ vars.SONAR_CLOUD_ORGANIZATION }}
+                token: ${{ secrets.SONAR_CLOUD_TOKEN }}
+                
